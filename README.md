@@ -456,6 +456,29 @@ With the following settings the operation of the gateway may be **unstable**: di
 - **msg_received** - amount of messages received from the device
 - **last_msg** - type of last received message
 
+# Gateway controls
+
+The old version of integration used two switches, pair and firmware_lock. If you still have them after the upgrade, remove them manually.
+
+The new version has two drop-down lists (select entities) - command and data.
+
+Available commands:
+
+- Idle - reset the command select to the default state
+- Zigbee Pair - start the process of adding a new zigbee device
+   - you can also start the process by pressing the phisical button on the gateway three times
+   - you can also start the process from the Mi Home app
+- Zigbee Bind - configure the bindings of zigbee devices, only if they support it
+- Zigbee OTA - try to update the zigbee device if there is firmware for it
+- Zigbee Config - start the initial setup process for the device
+   - the battery devices must first be woken up manually
+- Zigbee Remove - start the zigbee device removal process
+- Zigbee Table Update - update the zigbee stats table manually
+- Firmware Lock - block the gateway firmware update ([read more](#supported-firmwares))
+- Gateway Reboot - reboot gateway
+- Gateway Enable FTP - enable FTP on gateway
+- Gateway Dump Data - save all gateway data in the Hass configuration folder
+
 # Advanced config
 
 ## Integration config
